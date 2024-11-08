@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Sider from './components/Sider';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+import AdminLayout from './components/Layouts/AdminLayout';
+import Mahasiswa from './components/Pages/Admin/Mahasiswa';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="flex min-h-screen bg-gray-200">
+    <Sider />
+    <div className="flex-1 flex flex-col">
+    <Header />
+    <Main />
+    <Footer />
+    <AdminLayout>
+      <Mahasiswa /> 
+    </AdminLayout>
+     </div>
+     </div>
   );
-}
-
+};
 export default App;
